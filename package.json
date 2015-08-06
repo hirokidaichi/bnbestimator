@@ -1,0 +1,30 @@
+{
+  "name": "bnb-marketer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hirokidaichi/bnbestimator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hirokidaichi/bnbestimator/issues"
+  },
+  "homepage": "https://github.com/hirokidaichi/bnbestimator",
+  "dependencies": {
+    "bluebird": "^2.9.34",
+    "cheerio-httpcli": "^0.3.2",
+    "electron-debug": "^0.1.1",
+    "flumine": "^0.1.8",
+    "ipc-promise": "^0.1.1",
+    "merge": "^1.2.0",
+    "moment": "^2.10.6",
+    "request": "^2.60.0",
+    "vue": "^0.12.9"
+  }
+}

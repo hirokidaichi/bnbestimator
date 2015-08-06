@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script>
+        window.jQuery = window.$ = (require("js/jquery-2.1.4.min"));
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="loading">
+        <img src="img/circle-loading-animation.gif" alt="" />
+    </div>
+    <div id="panel" class="top-panel">
+        <div style="margin:6px;float:left">
+            <span style="font-size:21px;color:#ff5456"><b>airbnb</b>Estimator </span>
+
+        </div>
+        <form class="navbar-form pull-right" action="">
+            <div class="input-group input-group">
+                <span class="input-group-addon">from</span>
+                <input id="fromDate" type="date" style="width:160px" class="form-control" v-model="from"
+                v-attr="min:fromMin">
+            </div>
+            <div class="input-group input-group">
+                <span class="input-group-addon">to</span>
+                <input id="toDate" type="date" style="width:160px" class="form-control" v-model="to"
+                v-attr="min:toMin">
+            </div>
+
+
+            <div class="input-group">
+                <input type="text" id="bnbUrl" style="width:200px" class="form-control" v-model="url"
+                placeholder="please paste airbnb url ..">
+                <span class="input-group-btn">
+        <button id="estimateButton" class="btn btn-info" v-on="click:submit" type="button">estimate!</button>
+      </span>
+            </div>
+            <!-- /input-group -->
+        </form>
+    </div>
+
+    <div style="width:100%;margin-top:56px;" class="container">
+        <div class="row">
+            <div class="col-sm-5" style="padding:5px">
+                <!-- request table-->
+                <div id="requestTable">
+                    <template v-if="items.length > 0">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Request</div>
+                            <div class="panel-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>key</th>
+                                            <th>value</th>
+                                        </tr>
+                                    </thead>
+                                    <tr v-repeat="items">
+                                        <td>{{key}}</td>
+                                        <td>{{value}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                </div>
+                </template>
+            </div>
+            <!-- /request table-->
+
+            <div id="resultTable">
+                <template v-if="items.length > 0">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Result</div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>date</th>
+                                        <th>rate</th>
+                                        <th>price</th>
+                                    </tr>
+                                </thead>
+                                <tr v-repeat="items">
+                                    <td>{{date}}</td>
+                                    <td>{{rate}}%</td>
+                                    <td>{{price}}円</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            </div>
+            </template>
+        </div>
+        <!--result table -->
+    </div>
+    <!-- left-col-->
+
+    <div class="col-sm-7" style="padding:5px">
+        <div id="graph">
+            <template v-if="dataset">
+                <div class="panel panel-default">
+                  <div class="panel-heading">{{title}}</div>
+                    <div class="panel-body" style="width:90%;margin-left:5px">
+                        <canvas id="graph1" width="16" height="9" style="margin:10px;width:98%;height:300px"></canvas>
+                        <canvas id="graph2" width="16" height="9" style="margin:10px;width:98%;height:300px"></canvas>
+                    </div>
+                </div>
+            </template>
+        </div>
+</body>
+
+</html>
