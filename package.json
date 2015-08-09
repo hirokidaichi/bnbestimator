@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./dist",
-    "build" : "npm run clean && electron-packager . airbnbEstimator --out=dist/osx/ --platform=darwin --arch=x64 --icon=img/mount.icns --version=0.28.2"
+    "build" : "npm run clean && electron-packager . airbnbEstimator --out=dist/osx/ --platform=darwin --arch=x64 --icon=img/mount.icns --version=0.28.2",
+    "pack" : "npm run build && electron-installer-dmg dist/osx/airbnbEstimator-darwin-x64/airbnbEstimator.app airbnbEstimator --icon=img/mount.icns --out=dist/osx"
   },
   "repository": {
     "type": "git",
