@@ -1,0 +1,20 @@
+{
+  "name": "bnb-marketer",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/hirokidaichi/bnbestimator",
+  "authors": [
+    "Hiroki Daichi <hirokidaichi@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Chart.js": "~1.0.2"
+  }
+}
