@@ -1,2 +1,3 @@
+*.swp
 .DS*
 node_modules/
